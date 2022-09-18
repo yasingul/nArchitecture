@@ -1,6 +1,8 @@
 ﻿using Application.Features.BrandsFeatures.Commands.CreateBrandFeatures;
 using Application.Features.BrandsFeatures.Dtos;
+using Application.Features.BrandsFeatures.Models;
 using AutoMapper;
+using Core.Persistence.Paging;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,9 @@ namespace Application.Features.BrandsFeatures.Profiles
         {
             CreateMap<Brand, CreatedBrandDto>().ReverseMap();
             CreateMap<Brand, CreateBrandCommand>().ReverseMap();
+            CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();
+            CreateMap<Brand, BrandListDto>().ReverseMap();
+            CreateMap<Brand, BrandGetByIdDto>().ReverseMap();
         }
     }
 }
